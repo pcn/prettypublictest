@@ -1,0 +1,5 @@
+flask
+mysql
+flask-mysql
+gunicorn
+kazoo
