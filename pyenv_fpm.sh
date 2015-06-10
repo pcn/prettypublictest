@@ -5,7 +5,8 @@ PKG=prettypublictest
 
 SCRIPT_DIR=$(dirname $0)
 
-apt-get -y install git gcc zlib1g-dev libreadline-dev libbz2-dev libsqlite3-dev libssl-dev ruby-dev libmysqlclient-dev openssl zlib1g libreadline6 libsqlite3-0
+# For now, travis can install these
+# apt-get -y install git gcc zlib1g-dev libreadline-dev libbz2-dev libsqlite3-dev libssl-dev ruby-dev libmysqlclient-dev openssl zlib1g libreadline6 libsqlite3-0
 
 git clone https://github.com/yyuu/pyenv-installer
 ( cd pyenv-installer; bin/pyenv-installer )
@@ -28,7 +29,7 @@ pyenv global $PKG
 PKG_VER=$(python -c "exec(open('$SCRIPT_DIR/$PKG/$PKG/version.py').read()); print(__version__)")
 
 
-gem install fpm
+# gem install fpm
 fpm -d libmysqlclient-dev \
     -d openssl \
     -d zlib1g \

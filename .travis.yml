@@ -1,3 +1,7 @@
+before_install:
+  - sudo apt-get -y install git gcc zlib1g-dev libreadline-dev libbz2-dev libsqlite3-dev libssl-dev ruby-dev libmysqlclient-dev openssl zlib1g libreadline6 libsqlite3-0
+  - gem install fpm
+
 install:
   - ./pyenv_fpm.sh
   - pip install -r requirements-test.txt
