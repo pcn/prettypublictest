@@ -11,14 +11,13 @@ SCRIPT_DIR=$(dirname $0)
 git clone https://github.com/yyuu/pyenv-installer
 ( cd pyenv-installer; bin/pyenv-installer )
 
-echo '# Load pyenv automatically by adding' > ~/.bash_profile
-echo '# the following to ~/.bash_profile:' >> ~/.bash_profile
+# Load pyenv automatically by adding
+# the following to ~/.bash_profile:
 
-echo 'export PATH="$HOME/.pyenv/bin:$PATH"' >> ~/.bash_profile
-echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
-echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
-. .bash_profile
 pyenv install $PYTHON_VERSION
 pyenv virtualenv $PYTHON_VERSION $PKG
 pyenv global $PKG
