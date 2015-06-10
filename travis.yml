@@ -1,0 +1,11 @@
+install:
+  - pyenv_fpm.sh
+  - pip install -r requirements-test.txt
+
+script: . ~/.bash_profile && pip install prettypublictest
+
+language: python
+python:
+  - "2.7"
+
+script: test.sh

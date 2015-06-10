@@ -12,13 +12,13 @@ app = Flask(__name__)
 # load the following from a settings file
 app.config.from_envvar('DB_SETTINGS', silent=True)
 
-if app.config['DB_TYPE'].lower() == 'none':
-    pass
-else:
-    from flaskext.mysql import MySQL
-    mysql = MySQL()
-    mysql.init_app(app)
+# if app.config['DB_TYPE'].lower() == 'none':
+#     pass
+# else:
+#     from flaskext.mysql import MySQL
+#     mysql = MySQL()
+#     mysql.init_app(app)
 
 @app.route('/')
 def hello_world():
-    return 'These are not the droids you are looking for'
+    return 'HI!'
